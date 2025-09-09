@@ -35,18 +35,16 @@ animations = [{
 radius = 54.0
 height = 136.0
 
-[node name="Player" type="Node2D"]
-
-[node name="Player" type="Area2D" parent="."]
+[node name="Player" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_cxr5p")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hp6x6")
 animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3tkgg")
 
-[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

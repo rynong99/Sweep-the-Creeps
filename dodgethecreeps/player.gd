@@ -29,15 +29,23 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
+		
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, get_viewport_rect().size)
 
 
 func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
+	#hide() # Player disappears after being hit.
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
+	pass
 	
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func _on_player_hit() -> void:
+	pass # Replace with function body.

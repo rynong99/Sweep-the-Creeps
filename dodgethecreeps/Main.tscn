@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwhxoekx31fbt"]
+
+[ext_resource type="Script" uid="uid://dxpy44vk3x3ld" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://q03al72pqq1b" path="res://Mob.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dy0px68yjpmsn" path="res://Player.tscn" id="3_fos0i"]
+[ext_resource type="PackedScene" uid="uid://df0tak08dsi8b" path="res://HUD.tscn" id="4_cm0pq"]
+[ext_resource type="AudioStream" uid="uid://bu1eh6aa4frk4" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="5_fos0i"]
+[ext_resource type="AudioStream" uid="uid://cplg6cjjcdq6t" path="res://dodge_the_creeps_2d_assets/art/gameover.wav" id="6_3dxm6"]
+
+[sub_resource type="Curve2D" id="Curve2D_3dxm6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 242, -445, 0, 0, 0, 0, 243, 274, 0, 0, 0, 0, -239, 274, 0, 0, 0, 0, -237, -447, 0, 0, 0, 0, 245, -445, 0, 0, 0, 0, 242, -445)
+}
+point_count = 6
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r0du0")
+mob_scene = ExtResource("2_cm0pq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0, 0.612785, 0.384531, 1)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="."]
+position = Vector2(240, 450)
+curve = SubResource("Curve2D_3dxm6")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(242, -445)
+rotation = 1.56941
+
+[node name="Player" parent="." instance=ExtResource("3_fos0i")]
+
+[node name="HUD" parent="." instance=ExtResource("4_cm0pq")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fos0i")
+parameters/looping = false
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3dxm6")
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
