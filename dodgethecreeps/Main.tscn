@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwhxoekx31fbt"]
+[gd_scene load_steps=9 format=3 uid="uid://cwhxoekx31fbt"]
 
 [ext_resource type="Script" uid="uid://dxpy44vk3x3ld" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://q03al72pqq1b" path="res://Mob.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dy0px68yjpmsn" path="res://Player.tscn" id="3_fos0i"]
 [ext_resource type="PackedScene" uid="uid://df0tak08dsi8b" path="res://HUD.tscn" id="4_cm0pq"]
 [ext_resource type="AudioStream" uid="uid://bu1eh6aa4frk4" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="5_fos0i"]
+[ext_resource type="AudioStream" uid="uid://3qpgg17f71t2" path="res://success_bell-6776.mp3" id="5_lgr22"]
 [ext_resource type="AudioStream" uid="uid://cplg6cjjcdq6t" path="res://dodge_the_creeps_2d_assets/art/gameover.wav" id="6_3dxm6"]
 
 [sub_resource type="Curve2D" id="Curve2D_3dxm6"]
@@ -60,6 +61,10 @@ progress = 2400.0
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_fos0i")
 parameters/looping = false
+
+[node name="GameWin" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-394, 186)
+stream = ExtResource("5_lgr22")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-197, 93)

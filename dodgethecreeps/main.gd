@@ -15,7 +15,10 @@ func game_over(win):
 	$MobTimer.stop()
 	$HUD.show_game_over(win)
 	$Music.stop()
-	$DeathSound.play()
+	if win==true:
+		$GameWin.play()
+	else:
+		$DeathSound.play()
 
 func new_game():
 	score = 60
