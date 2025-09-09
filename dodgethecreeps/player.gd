@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 signal hit
 @export var speed = 400
 var screen_size
@@ -39,7 +39,6 @@ func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
-	pass
 	
 func start(pos):
 	position = pos

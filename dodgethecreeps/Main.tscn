@@ -9,17 +9,24 @@
 
 [sub_resource type="Curve2D" id="Curve2D_3dxm6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 242, -445, 0, 0, 0, 0, 243, 274, 0, 0, 0, 0, -239, 274, 0, 0, 0, 0, -237, -447, 0, 0, 0, 0, 245, -445, 0, 0, 0, 0, 242, -445)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 5
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r0du0")
 mob_scene = ExtResource("2_cm0pq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
 show_behind_parent = true
 clip_contents = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,7 +36,7 @@ scale = Vector2(100, 100)
 color = Color(0, 0.612785, 0.384531, 1)
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -41,14 +48,12 @@ one_shot = true
 position = Vector2(240, 450)
 
 [node name="MobPath" type="Path2D" parent="."]
-position = Vector2(240, 450)
+scale = Vector2(0.75, 0.75)
 curve = SubResource("Curve2D_3dxm6")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(242, -445)
-rotation = 1.56941
-
-[node name="Player" parent="." instance=ExtResource("3_fos0i")]
+rotation = -1.5708
+progress = 2400.0
 
 [node name="HUD" parent="." instance=ExtResource("4_cm0pq")]
 
@@ -57,10 +62,13 @@ stream = ExtResource("5_fos0i")
 parameters/looping = false
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-197, 93)
 stream = ExtResource("6_3dxm6")
+
+[node name="Player" parent="." instance=ExtResource("3_fos0i")]
+position = Vector2(240, 450)
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
-[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
