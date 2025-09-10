@@ -2,7 +2,7 @@
 - Started project using the Dodge the Creeps tutorial on https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html
 
 9/9/2025
-- Completed initial tutorial
+- Completed initial tutorial. It took ~2.5 hrs total to finish with a bit of troubleshooting.
 - Game changed to push creeps off the screen.
   - Player node is now a StaticBody2D to enable collisions between the player and the creeps.
   - Mob spawning algorithm changed to spit out ~100 creeps that float around and push into each other.
