@@ -9,3 +9,5 @@
   - Scoring system changed into a countdown timer, with the game over state being running out of time.
   - Game win state added when all creeps are gone from the screen.
   -Added a "Remaining Creeps" counter to the bottom of the screen.
+- Added a new player sprite from the wonderful Otterisk at https://otterisk.itch.io/hana-caraka-base-character
+- Added a game winning sound from https://pixabay.com/sound-effects/success-bell-6776/
