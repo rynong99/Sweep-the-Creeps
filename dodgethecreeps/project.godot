@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DodgeTheCreeps"
-run/main_scene="uid://dy0px68yjpmsn"
+run/main_scene="uid://cwhxoekx31fbt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=480
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="/Users/ryanong/Documents/GitHub/ATLS-4140/dodgethecreeps/Sweep the Creeps Demo.avi"
+movie_writer/fps=24
 
 [global_group]
 
