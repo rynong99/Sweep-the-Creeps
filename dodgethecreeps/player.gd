@@ -28,7 +28,8 @@ func _process(delta):
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
+		if velocity.y > 0:
+				$AnimatedSprite2D.animation = "down"
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, get_viewport_rect().size)
