@@ -2,6 +2,7 @@ extends Node2D
 
 @export var mob_scene: PackedScene
 var score
+var prevCount = 100
 var touch
 var mobCount
 var screen_size = get_viewport_rect().size
@@ -38,12 +39,15 @@ func _on_score_timer_timeout():
 	score -= 1
 	mobCount = get_tree().get_node_count_in_group("mobs")
 	print(mobCount)
+	if mobCount < prevCount:
+		score += (prevCount - mobCount)/4
 	if mobCount == 0:
 		game_over(true)
 	elif score == 0:
 		game_over(false)
 	$HUD.update_score(score)
 	$HUD.update_count(mobCount)
+	prevCount = mobCount
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
