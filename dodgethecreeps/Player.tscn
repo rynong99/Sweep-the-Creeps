@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dy0px68yjpmsn"]
+[gd_scene load_steps=28 format=3 uid="uid://dy0px68yjpmsn"]
 
 [ext_resource type="Script" uid="uid://mad7yswyllqk" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bmlj1gtrptblt" path="res://Hana Caraka - Base Character [sample]/walk.png" id="2_kpjcp"]
@@ -189,11 +189,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxr5p"]
-radius = 27.0
-height = 68.0
-
-[node name="Player" type="StaticBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_cxr5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -202,6 +198,6 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_hp6x6")
 animation = &"up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.5, 1.5)
-shape = SubResource("CapsuleShape2D_cxr5p")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-32, 40, 32, 40, 48, -64, 0, -40, -48, -64)

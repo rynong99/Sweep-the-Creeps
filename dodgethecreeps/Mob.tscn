@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://q03al72pqq1b"]
+[gd_scene load_steps=11 format=3 uid="uid://q03al72pqq1b"]
 
 [ext_resource type="Script" uid="uid://lkieagb0fp8i" path="res://mob.gd" id="1_ejbti"]
 [ext_resource type="Texture2D" uid="uid://vkchcubrqw40" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="2_ch7wj"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ct4kni30r7gjv" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png" id="5_utplx"]
 [ext_resource type="Texture2D" uid="uid://3ppgli0yjwck" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png" id="6_6v40e"]
 [ext_resource type="Texture2D" uid="uid://dw8fylhofqt4s" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="7_xqp27"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ejbti"]
+friction = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8qumo"]
 animations = [{
@@ -49,6 +52,10 @@ radius = 44.0
 height = 112.0
 
 [node name="Mob" type="RigidBody2D" groups=["mobs", "mobsCount"]]
+collision_layer = 3
+collision_mask = 3
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_ejbti")
 gravity_scale = 0.0
 continuous_cd = 1
 max_contacts_reported = 1
@@ -67,5 +74,4 @@ shape = SubResource("CapsuleShape2D_wkhi8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

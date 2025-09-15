@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwhxoekx31fbt"]
+[gd_scene load_steps=13 format=3 uid="uid://cwhxoekx31fbt"]
 
 [ext_resource type="Script" uid="uid://dxpy44vk3x3ld" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://q03al72pqq1b" path="res://Mob.tscn" id="2_cm0pq"]
@@ -10,9 +10,24 @@
 
 [sub_resource type="Curve2D" id="Curve2D_3dxm6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 85.3333, 85.3333, 0, 0, 0, 0, 2474.67, 85.3333, 0, 0, 0, 0, 2474.67, 1365.33, 0, 0, 0, 0, 85.3333, 1365.33, 0, 0, 0, 0, 85.3333, 85.3333)
 }
 point_count = 5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trn2v"]
+normal = Vector2(0, 1)
+distance = 24.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_20pc6"]
+normal = Vector2(1, 0)
+distance = -8.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_03owx"]
+distance = -1000.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wkp8b"]
+normal = Vector2(-1, 0)
+distance = -1384.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r0du0")
@@ -46,14 +61,15 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(960, 720)
 
 [node name="MobPath" type="Path2D" parent="."]
 scale = Vector2(0.75, 0.75)
 curve = SubResource("Curve2D_3dxm6")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-rotation = -1.5708
+position = Vector2(2474.67, 95.9885)
+rotation = 1.5708
 progress = 2400.0
 
 [node name="HUD" parent="." instance=ExtResource("4_cm0pq")]
@@ -71,7 +87,29 @@ position = Vector2(-197, 93)
 stream = ExtResource("6_3dxm6")
 
 [node name="Player" parent="." instance=ExtResource("3_fos0i")]
-position = Vector2(240, 450)
+position = Vector2(960, 720)
+
+[node name="World" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Top" type="CollisionShape2D" parent="World"]
+position = Vector2(32, 8)
+shape = SubResource("WorldBoundaryShape2D_trn2v")
+
+[node name="Left" type="CollisionShape2D" parent="World"]
+position = Vector2(40, 1056)
+shape = SubResource("WorldBoundaryShape2D_20pc6")
+
+[node name="Bottom" type="CollisionShape2D" parent="World"]
+position = Vector2(8, 56)
+shape = SubResource("WorldBoundaryShape2D_03owx")
+
+[node name="Right" type="CollisionShape2D" parent="World"]
+position = Vector2(504, 1056)
+shape = SubResource("WorldBoundaryShape2D_wkp8b")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(8, 56)
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

@@ -30,7 +30,7 @@ func new_game():
 	get_tree().call_group("goal", "queue_free")
 	$Music.play()
 	var spawnGoal = randi_range(0,100)
-	for i in range(100):
+	for i in range(1000):
 		mobSpawn()
 		i+=1
 
@@ -73,11 +73,11 @@ func mobSpawn():
 
 	# Spawn the mob by adding it to the Main scene.
 	
-	if (mob.position.x < 0) or (mob.position.x > (480)):
+	if (mob.position.x < 0) or (mob.position.x > (1920)):
 		print('Mob spawned out of bounds (X)')
 		print(mob.position)
 		return
-	elif (mob.position.y < 0) or (mob.position.y > (720)):
+	elif (mob.position.y < 0) or (mob.position.y > (1080)):
 		print('Mob spawned out of bounds (Y)')
 		print(mob.position)
 		return
