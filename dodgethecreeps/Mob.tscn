@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://q03al72pqq1b"]
+[gd_scene load_steps=13 format=3 uid="uid://q03al72pqq1b"]
 
 [ext_resource type="Script" uid="uid://lkieagb0fp8i" path="res://mob.gd" id="1_ejbti"]
 [ext_resource type="Texture2D" uid="uid://vkchcubrqw40" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="2_ch7wj"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dw8fylhofqt4s" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="7_xqp27"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ejbti"]
-friction = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8qumo"]
 animations = [{
@@ -51,10 +50,20 @@ animations = [{
 radius = 44.0
 height = 112.0
 
+[sub_resource type="Gradient" id="Gradient_ejbti"]
+offsets = PackedFloat32Array(0, 0.681818)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ch7wj"]
+gradient = SubResource("Gradient_ejbti")
+width = 24
+height = 24
+fill = 1
+fill_from = Vector2(0.493119, 0.493119)
+
 [node name="Mob" type="RigidBody2D" groups=["mobs", "mobsCount"]]
 collision_layer = 3
 collision_mask = 3
-mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_ejbti")
 gravity_scale = 0.0
 continuous_cd = 1
@@ -73,5 +82,11 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_wkhi8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(8, 0)
+color = Color(1, 0, 0, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_ch7wj")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

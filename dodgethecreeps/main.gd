@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var mob_scene: PackedScene
+var level = 1
 var score
 var prevCount = 100
 var touch
@@ -24,14 +25,18 @@ func game_over(win):
 func new_game():
 	score = 60
 	$Player.start($StartPosition.position)
+	$Player.speed = 400+(100*(level-1))
 	$StartTimer.start()
 	$HUD.update_score(score)
-	$HUD.show_message("Start Sweeping")
+	if level == 1:
+		$HUD.show_message("Start Sweeping")
+	else:
+		$HUD.show_message("Level"+str(level))
 	get_tree().call_group("mobs", "queue_free")
 	get_tree().call_group("goal", "queue_free")
 	$Music.play()
 	var spawnGoal = randi_range(0,100)
-	for i in range(1000):
+	for i in range(100*level):
 		mobSpawn()
 		i+=1
 
@@ -43,8 +48,10 @@ func _on_score_timer_timeout():
 		score += (prevCount - mobCount)/4
 	if mobCount == 0:
 		game_over(true)
+		level += 1
 	elif score == 0:
 		game_over(false)
+		level = 1
 	$HUD.update_score(score)
 	$HUD.update_count(mobCount)
 	prevCount = mobCount

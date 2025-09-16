@@ -190,7 +190,10 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+safe_margin = 2.0
 script = ExtResource("1_cxr5p")
+speed = 800
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -3)
