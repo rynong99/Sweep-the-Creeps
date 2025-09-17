@@ -47,7 +47,7 @@ func new_game():
 			$Player/CollisionShape2D.scale = Vector2(level/2,level/2)
 		print($Player/CollisionShape2D.scale)
 	get_tree().call_group("mobs", "queue_free")
-	get_tree().call_group("goal", "queue_free")
+	get_tree().call_group("coin", "queue_free")
 	$Music.play()
 	var spawnGoal = randi_range(0,100)
 	for i in range(100*level):
@@ -118,8 +118,9 @@ func _on_coin_timer_timeout() -> void:
 func _on_power_up_timer_timeout() -> void:
 	print("Powering Down")
 	$PowerUpTimer.stop()
-	$Player/PointLight2D.scale /= 2
-	$Player/CollisionShape2D.scale /= 2
+	$Player.speed /= 2
+	$Player/PointLight2D.scale /= 4
+	$Player/CollisionShape2D.scale /= 4
 
 func powerUp():
 	pass
@@ -133,6 +134,7 @@ func _on_coin_collect() -> void:
 func _on_player_power_up() -> void:
 	print("Powering Up")
 	$PowerUpTimer.start()
-	$Player/PointLight2D.scale *= 2
-	$Player/CollisionShape2D.scale *= 2
+	$Player.speed *= 2
+	$Player/PointLight2D.scale *= 4
+	$Player/CollisionShape2D.scale *= 4
 	pass # Replace with function body.
