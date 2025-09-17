@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name player
 signal hit
-signal collect
+signal powerUp
 @export var speed = 400
 var screen_size
 func ready():
@@ -55,3 +55,6 @@ func start(pos):
 
 func _on_player_hit() -> void:
 	pass # Replace with function body.
+
+func triggerPowerUp():
+	powerUp.emit()
