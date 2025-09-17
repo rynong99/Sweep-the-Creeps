@@ -1,11 +1,15 @@
 extends Node2D
 
 @export var mob_scene: PackedScene
+@export var coin_scene: PackedScene
 var level = 1
 var score
+var coinScore = 0
 var prevCount = 100
+var prevCoin = 0
 var touch
 var mobCount
+var coinCount = 0
 var screen_size = get_viewport_rect().size
 
 func _ready():
@@ -15,6 +19,7 @@ func game_over(win):
 	$Player.hide()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$CoinTimer.stop()
 	$HUD.show_game_over(win)
 	$Music.stop()
 	if win==true:
@@ -28,6 +33,7 @@ func new_game():
 	if $Player.speed > 800:
 		$Player.speed = 400+(100*(level-1))
 	$StartTimer.start()
+	$CoinTimer.start()
 	$HUD.update_score(score)
 	if level == 1:
 		$Player/PointLight2D.scale = Vector2(level,level)
@@ -51,6 +57,7 @@ func new_game():
 func _on_score_timer_timeout():
 	score -= level/2
 	mobCount = get_tree().get_node_count_in_group("mobs")
+	coinCount = get_tree().get_node_count_in_group("coin")
 	print(mobCount)
 	if mobCount < prevCount:
 		score += (prevCount - mobCount)/2
@@ -63,6 +70,7 @@ func _on_score_timer_timeout():
 	$HUD.update_score(score)
 	$HUD.update_count(mobCount)
 	prevCount = mobCount
+	prevCoin = coinCount
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
@@ -93,16 +101,34 @@ func mobSpawn():
 	# Spawn the mob by adding it to the Main scene.
 	
 	if (mob.position.x < 0) or (mob.position.x > (1920)):
-		print('Mob spawned out of bounds (X)')
-		print(mob.position)
-		return
+		mob.position.x = 960
 	elif (mob.position.y < 0) or (mob.position.y > (1080)):
-		print('Mob spawned out of bounds (Y)')
-		print(mob.position)
-		return
-	else:
-		add_child(mob)
+		mob.position.y = 540
+	add_child(mob)
+func coinSpawn():
+	# Create a new instance of the Mob scene.
+	var coin = coin_scene.instantiate()
+	coin.position = Vector2(randi_range(0,1920),randi_range(0,1080))
+	add_child(coin)
 
 func _on_hud_start_game() -> void:
 	new_game()
-	
+func _on_coin_timer_timeout() -> void:
+	coinSpawn()
+func _on_power_up_timer_timeout() -> void:
+	print("Powering Down")
+	$PowerUpTimer.stop()
+	$Player/PointLight2D.scale /= 2
+	$Player/CollisionShape2D.scale /= 2
+
+func _on_coin_collect() -> void:
+	print("Powering Up")
+	$PowerUpTimer.start()
+	$Player/PointLight2D.scale *= 4
+	$Player/CollisionShape2D.scale *= 4
+
+func _on_player_collect() -> void:
+	print("Coin collected")
+	$PowerUpTimer.start()
+	$Player/PointLight2D.scale *= 4
+	$Player/CollisionShape2D.scale *= 4
