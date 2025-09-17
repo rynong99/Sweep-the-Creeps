@@ -13,7 +13,7 @@ func show_message(text):
 	
 func show_game_over(win):
 	if win == true:
-		show_message("You Win!")
+		show_message("Level up!")
 		# Wait until the MessageTimer has counted down.
 	else:	
 		show_message("Game Over!")

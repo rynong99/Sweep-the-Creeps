@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dy0px68yjpmsn"]
+[gd_scene load_steps=29 format=3 uid="uid://dy0px68yjpmsn"]
 
 [ext_resource type="Script" uid="uid://mad7yswyllqk" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bmlj1gtrptblt" path="res://Hana Caraka - Base Character [sample]/walk.png" id="2_kpjcp"]
@@ -189,6 +189,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(80, 112)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
 safe_margin = 2.0
@@ -201,6 +204,5 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_hp6x6")
 animation = &"up"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
-polygon = PackedVector2Array(-32, 40, 32, 40, 48, -64, 0, -40, -48, -64)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kpjcp")

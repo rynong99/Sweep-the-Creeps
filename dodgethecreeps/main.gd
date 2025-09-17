@@ -25,13 +25,21 @@ func game_over(win):
 func new_game():
 	score = 60
 	$Player.start($StartPosition.position)
-	$Player.speed = 400+(100*(level-1))
+	if $Player.speed > 800:
+		$Player.speed = 400+(100*(level-1))
 	$StartTimer.start()
 	$HUD.update_score(score)
 	if level == 1:
+		$Player/PointLight2D.scale = Vector2(level,level)
+		$Player/CollisionShape2D.scale = Vector2(level,level)
 		$HUD.show_message("Start Sweeping")
 	else:
-		$HUD.show_message("Level"+str(level))
+		$HUD.show_message("Level "+str(level))
+		if $Player/PointLight2D.scale < Vector2(4,4):
+			$Player/PointLight2D.scale = Vector2(level/2,level/2)
+		if $Player/CollisionShape2D.scale < Vector2(5,5):
+			$Player/CollisionShape2D.scale = Vector2(level/2,level/2)
+		print($Player/CollisionShape2D.scale)
 	get_tree().call_group("mobs", "queue_free")
 	get_tree().call_group("goal", "queue_free")
 	$Music.play()
@@ -41,15 +49,15 @@ func new_game():
 		i+=1
 
 func _on_score_timer_timeout():
-	score -= 1
+	score -= level/2
 	mobCount = get_tree().get_node_count_in_group("mobs")
 	print(mobCount)
 	if mobCount < prevCount:
-		score += (prevCount - mobCount)/4
-	if mobCount == 0:
+		score += (prevCount - mobCount)/2
+	if mobCount <= 0:
 		game_over(true)
 		level += 1
-	elif score == 0:
+	elif score <= 0:
 		game_over(false)
 		level = 1
 	$HUD.update_score(score)

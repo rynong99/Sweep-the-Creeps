@@ -9,7 +9,7 @@ func _process(delta):
 		queue_free()
 	elif (position.y < 0) or (position.y > (1080)):
 		queue_free()
-	if linear_velocity > Vector2(100,100):
+	if linear_velocity > Vector2(100,0) or linear_velocity > Vector2(0,100):
 		linear_damp = 2
 		self.set_collision_mask_value(2,false)
 func _on_visible_on_screen_notifier_2d_screen_exited():
