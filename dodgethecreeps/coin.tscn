@@ -1,7 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://bcbf0ub5i73qf"]
 
-[ext_resource type="Script" uid="uid://bc4e5h1nmnwrw" path="res://area_2d.gd" id="1_0t63x"]
+[ext_resource type="Script" uid="uid://dsetdidnvudwq" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://c2bsq4ukr8u0y" path="res://brackeys_platformer_assets/sprites/coin.png" id="2_v7riw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rshd"]
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdq0q"]
 atlas = ExtResource("2_v7riw")
@@ -95,9 +98,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rshd"]
-size = Vector2(16, 16)
-
 [sub_resource type="Gradient" id="Gradient_lgr22"]
 offsets = PackedFloat32Array(0, 0.587662)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -107,18 +107,21 @@ gradient = SubResource("Gradient_lgr22")
 fill = 1
 fill_from = Vector2(0.493119, 0.465596)
 
-[node name="Coin" type="Area2D" groups=["coin"]]
-scale = Vector2(5, 5)
+[node name="Coin" type="Area2D"]
+scale = Vector2(1, 1)
+collision_layer = 0
 script = ExtResource("1_0t63x")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3gef1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_4rshd")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3gef1")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(1.25, 1.25)
 texture = SubResource("GradientTexture2D_0t63x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

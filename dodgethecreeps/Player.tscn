@@ -206,6 +206,3 @@ animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kpjcp")
-
-[node name="CoinCollect" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kpjcp")

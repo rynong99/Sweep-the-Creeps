@@ -151,7 +151,9 @@ environment = SubResource("Environment_trn2v")
 [node name="Coin" parent="." instance=ExtResource("3_trn2v")]
 position = Vector2(-248, 1304)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_fos0i")]
+[node name="PointLight2D2" type="PointLight2D" parent="Coin"]
+texture = SubResource("GradientTexture2D_trn2v")
+texture_scale = 4.57
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

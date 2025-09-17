@@ -121,14 +121,8 @@ func _on_power_up_timer_timeout() -> void:
 	$Player/PointLight2D.scale /= 2
 	$Player/CollisionShape2D.scale /= 2
 
-func _on_coin_collect() -> void:
+func powerUp():
 	print("Powering Up")
 	$PowerUpTimer.start()
-	$Player/PointLight2D.scale *= 4
-	$Player/CollisionShape2D.scale *= 4
-
-func _on_player_collect() -> void:
-	print("Coin collected")
-	$PowerUpTimer.start()
-	$Player/PointLight2D.scale *= 4
-	$Player/CollisionShape2D.scale *= 4
+	$Player/PointLight2D.scale *= 2
+	$Player/CollisionShape2D.scale *= 2
