@@ -16,6 +16,8 @@ func _ready():
 	$Player.hide()
 
 func game_over(win):
+	if $Player.poweredUp == true:
+		powerDown()
 	$Player.hide()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
@@ -114,7 +116,8 @@ func coinSpawn():
 func _on_hud_start_game() -> void:
 	new_game()
 func _on_coin_timer_timeout() -> void:
-	coinSpawn()
+	if coinCount == 0:
+		coinSpawn()
 func _on_power_up_timer_timeout() -> void:
 	print("Powering Down")
 	$PowerUpTimer.stop()
@@ -122,18 +125,23 @@ func _on_power_up_timer_timeout() -> void:
 	$Player/PointLight2D.scale /= 4
 	$Player/CollisionShape2D.scale /= 4
 
-func powerUp():
-	pass
+func powerDown():
+	print("Powering Down")
+	$PowerUpTimer.stop()
+	$Player.poweredUp = false
+	$Player.speed /= 2
+	$Player/PointLight2D.scale /= 4
+	$Player/CollisionShape2D.scale /= 4
 
 
 func _on_coin_collect() -> void:
-	powerUp()
 	pass # Replace with function body.
 
 
 func _on_player_power_up() -> void:
 	print("Powering Up")
 	$PowerUpTimer.start()
+	$Player.poweredUp = true
 	$Player.speed *= 2
 	$Player/PointLight2D.scale *= 4
 	$Player/CollisionShape2D.scale *= 4

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name player
 signal hit
 signal powerUp
+@export var poweredUp = false
 @export var speed = 400
 var screen_size
 func ready():
@@ -32,10 +33,10 @@ func _process(delta):
 		$AnimatedSprite2D.flip_v = false
 		# See the note below about the following boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
+	elif velocity.y < 0:
 		$AnimatedSprite2D.animation = "up"
-		if velocity.y > 0:
-				$AnimatedSprite2D.animation = "down"
+	elif velocity.y > 0:
+		$AnimatedSprite2D.animation = "down"
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, get_viewport_rect().size)
@@ -57,4 +58,8 @@ func _on_player_hit() -> void:
 	pass # Replace with function body.
 
 func triggerPowerUp():
+	powerUp.emit()
+
+
+func _on_coin_collector_coin_collected() -> void:
 	powerUp.emit()

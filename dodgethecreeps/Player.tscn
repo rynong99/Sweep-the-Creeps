@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://dy0px68yjpmsn"]
+[gd_scene load_steps=30 format=3 uid="uid://dy0px68yjpmsn"]
 
 [ext_resource type="Script" uid="uid://mad7yswyllqk" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bmlj1gtrptblt" path="res://Hana Caraka - Base Character [sample]/walk.png" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://d4ft3e3hucw36" path="res://coin_collector.gd" id="3_kne1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
 atlas = ExtResource("2_kpjcp")
@@ -128,7 +129,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -202,12 +203,18 @@ speed = 800
 position = Vector2(3, -3)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_hp6x6")
-animation = &"up"
+animation = &"down"
+frame_progress = 0.82988
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="CoinCollector" type="Area2D" parent="."]
+priority = 1
+script = ExtResource("3_kne1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoinCollector"]
 shape = SubResource("RectangleShape2D_kpjcp")
+
+[connection signal="area_entered" from="CoinCollector" to="CoinCollector" method="_on_area_entered"]
+[connection signal="coin_collected" from="CoinCollector" to="." method="_on_coin_collector_coin_collected"]

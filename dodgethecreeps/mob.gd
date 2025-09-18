@@ -6,8 +6,12 @@ func _ready():
 	
 func _process(delta):
 	if (position.x < 0) or (position.x > (1920)):
+		print("Scored")
+		AudioManager.playScore()
 		queue_free()
 	elif (position.y < 0) or (position.y > (1080)):
+		print("Scored")
+		AudioManager.playScore()
 		queue_free()
 	if linear_velocity > Vector2(100,0) or linear_velocity > Vector2(0,100):
 		linear_damp = 2

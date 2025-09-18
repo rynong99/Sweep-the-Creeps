@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwhxoekx31fbt"]
+[gd_scene load_steps=20 format=3 uid="uid://cwhxoekx31fbt"]
 
 [ext_resource type="Script" uid="uid://dxpy44vk3x3ld" path="res://main.gd" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://q03al72pqq1b" path="res://Mob.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dy0px68yjpmsn" path="res://Player.tscn" id="3_fos0i"]
 [ext_resource type="PackedScene" uid="uid://bcbf0ub5i73qf" path="res://coin.tscn" id="3_trn2v"]
+[ext_resource type="PackedScene" uid="uid://bhoalk6r08df" path="res://audio_manager.tscn" id="4_03owx"]
 [ext_resource type="PackedScene" uid="uid://df0tak08dsi8b" path="res://HUD.tscn" id="4_cm0pq"]
 [ext_resource type="AudioStream" uid="uid://bu1eh6aa4frk4" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="5_fos0i"]
 [ext_resource type="AudioStream" uid="uid://3qpgg17f71t2" path="res://success_bell-6776.mp3" id="5_lgr22"]
@@ -56,6 +57,8 @@ script = ExtResource("1_r0du0")
 mob_scene = ExtResource("2_cm0pq")
 coin_scene = ExtResource("3_trn2v")
 
+[node name="AudioManager" parent="." instance=ExtResource("4_03owx")]
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -81,7 +84,7 @@ wait_time = 0.1
 wait_time = 10.0
 
 [node name="CoinTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 3.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -110,6 +113,7 @@ parameters/looping = false
 [node name="GameWin" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-394, 186)
 stream = ExtResource("5_lgr22")
+volume_db = 10.0
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-197, 93)
@@ -164,5 +168,5 @@ texture_scale = 4.57
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="powerUp" from="Player" to="." method="_on_player_power_up"]
-[connection signal="collect" from="Coin" to="." method="_on_coin_collect"]
 [connection signal="collect" from="Coin" to="." method="powerUp"]
+[connection signal="collect" from="Coin" to="." method="_on_coin_collect"]
