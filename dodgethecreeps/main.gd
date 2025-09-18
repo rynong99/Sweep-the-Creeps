@@ -4,9 +4,7 @@ extends Node2D
 @export var coin_scene: PackedScene
 var level = 1
 var score
-var coinScore = 0
 var prevCount = 100
-var prevCoin = 0
 var touch
 var mobCount
 var coinCount = 0
@@ -72,7 +70,6 @@ func _on_score_timer_timeout():
 	$HUD.update_score(score)
 	$HUD.update_count(mobCount)
 	prevCount = mobCount
-	prevCoin = coinCount
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
