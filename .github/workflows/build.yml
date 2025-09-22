@@ -59,7 +59,7 @@ jobs:
       run: |
         mkdir -p build/web
         ~/godot/Godot_v${GODOT_VERSION}_linux.x86_64 --headless \
-          --path “https://github.com/rynong99/Sweep-the-Creeps/tree/main/dodgethecreeps” \
+          --path “/Sweep-the-Creeps/tree/main/dodgethecreeps” \
           --export-release "${WEB_PRESET}" build/web/index.html
 
     # — upload artifact for Pages —
