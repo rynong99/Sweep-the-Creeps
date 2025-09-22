@@ -1,5 +1,9 @@
-name: Build - Web
-
+name: Export HTML5
+run: |
+mkdir -p build/web
+~/godot/Godot_v${GODOT_VERSION}_linux.x86_64 --headless \
+--path “YOUR GAME DIRECTORY HERE” \
+--export-release "${WEB_PRESET}" build/web/index.html
 on:
   push:
     branches: [main]      # deploy on main
