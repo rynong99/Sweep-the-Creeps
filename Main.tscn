@@ -1,0 +1,172 @@
+[gd_scene load_steps=20 format=3 uid="uid://cwhxoekx31fbt"]
+
+[ext_resource type="Script" uid="uid://dxpy44vk3x3ld" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://q03al72pqq1b" path="res://Mob.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dy0px68yjpmsn" path="res://Player.tscn" id="3_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bcbf0ub5i73qf" path="res://coin.tscn" id="3_trn2v"]
+[ext_resource type="PackedScene" uid="uid://bhoalk6r08df" path="res://audio_manager.tscn" id="4_03owx"]
+[ext_resource type="PackedScene" uid="uid://df0tak08dsi8b" path="res://HUD.tscn" id="4_cm0pq"]
+[ext_resource type="AudioStream" uid="uid://bu1eh6aa4frk4" path="res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg" id="5_fos0i"]
+[ext_resource type="AudioStream" uid="uid://3qpgg17f71t2" path="res://success_bell-6776.mp3" id="5_lgr22"]
+[ext_resource type="AudioStream" uid="uid://cplg6cjjcdq6t" path="res://dodge_the_creeps_2d_assets/art/gameover.wav" id="6_3dxm6"]
+
+[sub_resource type="Curve2D" id="Curve2D_3dxm6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 85.3333, 85.3333, 0, 0, 0, 0, 2474.67, 85.3333, 0, 0, 0, 0, 2474.67, 1365.33, 0, 0, 0, 0, 85.3333, 1365.33, 0, 0, 0, 0, 85.3333, 85.3333)
+}
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_03owx"]
+offsets = PackedFloat32Array(0, 0.587662)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_trn2v"]
+gradient = SubResource("Gradient_03owx")
+fill = 1
+fill_from = Vector2(0.493119, 0.465596)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trn2v"]
+normal = Vector2(0, 1)
+distance = 24.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_20pc6"]
+normal = Vector2(1, 0)
+distance = -8.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_03owx"]
+distance = -1000.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wkp8b"]
+normal = Vector2(-1, 0)
+distance = -1384.0
+
+[sub_resource type="Gradient" id="Gradient_trn2v"]
+offsets = PackedFloat32Array(0.152985, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_03owx"]
+gradient = SubResource("Gradient_trn2v")
+
+[sub_resource type="Environment" id="Environment_trn2v"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture1D_03owx")
+
+[node name="Main" type="Node2D"]
+modulate = Color(0.458405, 0.458405, 0.458405, 1)
+script = ExtResource("1_r0du0")
+mob_scene = ExtResource("2_cm0pq")
+coin_scene = ExtResource("3_trn2v")
+
+[node name="AudioManager" parent="." instance=ExtResource("4_03owx")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0, 0.612785, 0.384531, 1)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="CoinTimer" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(960, 720)
+
+[node name="MobPath" type="Path2D" parent="."]
+scale = Vector2(0.75, 0.75)
+curve = SubResource("Curve2D_3dxm6")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(2474.67, 95.9885)
+rotation = 1.5708
+progress = 2400.0
+
+[node name="HUD" parent="." instance=ExtResource("4_cm0pq")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fos0i")
+parameters/looping = false
+
+[node name="GameWin" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-394, 186)
+stream = ExtResource("5_lgr22")
+volume_db = 10.0
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-197, 93)
+stream = ExtResource("6_3dxm6")
+
+[node name="Player" parent="." instance=ExtResource("3_fos0i")]
+position = Vector2(960, 720)
+speed = 400
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+texture = SubResource("GradientTexture2D_trn2v")
+texture_scale = 4.57
+
+[node name="World" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Top" type="CollisionShape2D" parent="World"]
+position = Vector2(32, 8)
+shape = SubResource("WorldBoundaryShape2D_trn2v")
+
+[node name="Left" type="CollisionShape2D" parent="World"]
+position = Vector2(40, 1056)
+shape = SubResource("WorldBoundaryShape2D_20pc6")
+
+[node name="Bottom" type="CollisionShape2D" parent="World"]
+position = Vector2(8, 56)
+shape = SubResource("WorldBoundaryShape2D_03owx")
+
+[node name="Right" type="CollisionShape2D" parent="World"]
+position = Vector2(504, 1056)
+shape = SubResource("WorldBoundaryShape2D_wkp8b")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(8, 56)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_trn2v")
+
+[node name="Coin" parent="." instance=ExtResource("3_trn2v")]
+position = Vector2(-248, 1304)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Coin"]
+texture = SubResource("GradientTexture2D_trn2v")
+texture_scale = 4.57
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_power_up_timer_timeout"]
+[connection signal="timeout" from="CoinTimer" to="." method="_on_coin_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="powerUp" from="Player" to="." method="_on_player_power_up"]
+[connection signal="collect" from="Coin" to="." method="powerUp"]
+[connection signal="collect" from="Coin" to="." method="_on_coin_collect"]
