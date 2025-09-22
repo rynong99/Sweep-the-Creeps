@@ -1,0 +1,73 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1758569228
+area_2d.gd::GDScript::2586962176060711416::1758084872::0::1::::<>StaticBody2D<><>0<>0<><>::
+audio_manager.gd::GDScript::8494463613704937847::1758141011::0::1::::<>Node<><>0<>0<><>::
+audio_manager.tscn::PackedScene::85490120452313767::1758147930::0::1::::<><><>0<>0<><>::uid://dta1tskqiw0oh::::res://audio_manager.gd<>uid://cej7tw6vugyet::::res://orb.ogg<>uid://rf6lb08ys0x0::::res://eat1.ogg
+coin.gd::GDScript::8432078153265130968::1758147579::0::1::::Coin<>Area2D<><>0<>0<><>::
+coin.tscn::PackedScene::2529212031921531669::1758147930::0::1::::<><><>0<>0<><>::uid://dsetdidnvudwq::::res://coin.gd<>uid://c2bsq4ukr8u0y::::res://brackeys_platformer_assets/sprites/coin.png<>uid://cej7tw6vugyet::::res://orb.ogg
+coin_collector.gd::GDScript::9206264284137245023::1758147928::0::1::::<>Area2D<><>0<>0<><>::
+eat1.ogg::AudioStreamOggVorbis::1205434193801202427::1758140338::1758569229::1::::<><><>0<>0<>8e2018ce166c9f1b95d44b02fed91579<>res://.godot/imported/eat1.ogg-3976e28e5c6fdd2ffe47649453edc95f.oggvorbisstr::
+hud.gd::GDScript::3993492457228108842::1758076372::0::1::::<>CanvasLayer<><>0<>0<><>::
+HUD.tscn::PackedScene::7562969901341229987::1758147930::0::1::::<><><>0<>0<><>::uid://bw5qiclnicr8u::::res://hud.gd<>uid://c1vln51glee7y::::res://dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf
+icon.svg::CompressedTexture2D::1563817687869739454::1756926463::1758569229::1::::<><><>0<>0<>79ac07f3683b60fc51eb171d1f195302<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.gd::GDScript::8806081673025337057::1758225517::0::1::::<>Node2D<><>0<>0<><>::
+Main.tscn::PackedScene::6332868290274534841::1758225517::0::1::::<><><>0<>0<><>::uid://dxpy44vk3x3ld::::res://main.gd<>uid://q03al72pqq1b::::res://Mob.tscn<>uid://dy0px68yjpmsn::::res://Player.tscn<>uid://bcbf0ub5i73qf::::res://coin.tscn<>uid://bhoalk6r08df::::res://audio_manager.tscn<>uid://df0tak08dsi8b::::res://HUD.tscn<>uid://bu1eh6aa4frk4::::res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg<>uid://3qpgg17f71t2::::res://success_bell-6776.mp3<>uid://cplg6cjjcdq6t::::res://dodge_the_creeps_2d_assets/art/gameover.wav
+mob.gd::GDScript::793213946024590590::1758141836::0::1::::<>RigidBody2D<><>0<>0<><>::
+Mob.tscn::PackedScene::1176331646295516165::1758147930::0::1::::<><><>0<>0<><>::uid://lkieagb0fp8i::::res://mob.gd<>uid://vkchcubrqw40::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png<>uid://dyq0ubtshfiqg::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png<>uid://b86ybrfcd47wh::::res://dodge_the_creeps_2d_assets/art/enemySwimming_1.png<>uid://ct4kni30r7gjv::::res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png<>uid://3ppgli0yjwck::::res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png<>uid://dw8fylhofqt4s::::res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png
+orb.ogg::AudioStreamOggVorbis::5074154219961363915::1758140382::1758569229::1::::<><><>0<>0<>3d0e094faf95f1df44f4982270853f43<>res://.godot/imported/orb.ogg-ffdd7d958f6236ccc79ed1a7733b6059.oggvorbisstr::
+player.gd::GDScript::842506709438624622::1758142313::0::1::::player<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::8896357250700365801::1758147930::0::1::::<><><>0<>0<><>::uid://mad7yswyllqk::::res://player.gd<>uid://bmlj1gtrptblt::::res://Hana Caraka - Base Character [sample]/walk.png<>uid://d4ft3e3hucw36::::res://coin_collector.gd
+README.md::TextFile::-1::1758085969::0::1::::<><><>0<>0<><>::
+success_bell-6776.mp3::AudioStreamMP3::1999239492351708889::1757461383::1758569229::1::::<><><>0<>0<>704700bbe1c716896a63c66dfd5a43c3<>res://.godot/imported/success_bell-6776.mp3-f3bd23dcd5b5d960ffdfccc5247f42d5.mp3str::
+::res://brackeys_platformer_assets/::1758568826
+LICENSE & CREDITS.txt::TextFile::-1::1757958019::0::1::::<><><>0<>0<><>::
+::res://brackeys_platformer_assets/fonts/::1757958040
+PixelOperator8-Bold.ttf::FontFile::4469390923769658413::1757958019::1758569229::1::::<><><>0<>0<>2b484a503b4cb76e6a937a9d86559463<>res://.godot/imported/PixelOperator8-Bold.ttf-6bc312ca645f8a73b7566fe440c91148.fontdata::
+PixelOperator8.ttf::FontFile::40145292582453851::1757958019::1758569229::1::::<><><>0<>0<>b80f2cc598c1cc6113ca85aa83d0e606<>res://.godot/imported/PixelOperator8.ttf-3412381cef42d35beeca2fa210de552c.fontdata::
+::res://brackeys_platformer_assets/music/::1757958040
+time_for_adventure.mp3::AudioStreamMP3::3339005826528074369::1757958019::1758569229::1::::<><><>0<>0<>a88d68c3a07c5ec4969781e01f0e13dc<>res://.godot/imported/time_for_adventure.mp3-2416c52731046d081861e614cf5cab5d.mp3str::
+::res://brackeys_platformer_assets/sounds/::1757958046
+coin.wav::AudioStreamWAV::6278344438378514932::1757958019::1758569229::1::::<><><>0<>0<>904dd7325864db2f36b6d0082fc9c2f2<>res://.godot/imported/coin.wav-7bd58a858e7eefa6c1871ffbb8adf32c.sample::
+explosion.wav::AudioStreamWAV::3310428908822625396::1757958019::1758569229::1::::<><><>0<>0<>52112b1fa5ae0535edf444e80d7390a2<>res://.godot/imported/explosion.wav-5aab81608295d364e63d602d9754fa6c.sample::
+hurt.wav::AudioStreamWAV::9211562475372232014::1757958019::1758569229::1::::<><><>0<>0<>08c53247d606f8f910da6ce2ad66156a<>res://.godot/imported/hurt.wav-f5cef1522ce2fba3e173dd33009beed5.sample::
+jump.wav::AudioStreamWAV::1695714937919639835::1757958019::1758569229::1::::<><><>0<>0<>2abb911c564d87f46600e9f6082f3871<>res://.godot/imported/jump.wav-83795df14be04773c71ac52f38790253.sample::
+power_up.wav::AudioStreamWAV::6247028959662588587::1757958019::1758569229::1::::<><><>0<>0<>59404928a59f6f643bb4fc001d2a7e2f<>res://.godot/imported/power_up.wav-ce7b03dc033ca36f5e16808bf13ee1d0.sample::
+tap.wav::AudioStreamWAV::8485933872125987706::1757958019::1758569229::1::::<><><>0<>0<>8f6044b98bdc977db98bfbf2ba77f3a9<>res://.godot/imported/tap.wav-b15afd3c9fb924c46e5139696fcfbc77.sample::
+::res://brackeys_platformer_assets/sprites/::1757958046
+coin.png::CompressedTexture2D::6671127556491046418::1757958019::1758569229::1::::<><><>0<>0<>c6024c0d7687494dae69bc9beb63e98f<>res://.godot/imported/coin.png-ba33385310ee462b4604b37cee7dac45.ctex::
+fruit.png::CompressedTexture2D::3873263950449122792::1757958019::1758569229::1::::<><><>0<>0<>c93ba3a6bfb6fc288718ca33eb9a1a17<>res://.godot/imported/fruit.png-8d62a17ed89431b711ec1df22b1b9592.ctex::
+knight.png::CompressedTexture2D::1937886601178565163::1757958019::1758569229::1::::<><><>0<>0<>1fbc227b861f87943c9411150d8154cf<>res://.godot/imported/knight.png-1438adb88511585191a11dbd3e40e6ed.ctex::
+platforms.png::CompressedTexture2D::5176742371440749470::1757958019::1758569229::1::::<><><>0<>0<>d0c52b551af817a74ebf834baec57155<>res://.godot/imported/platforms.png-773f98c154d5c3b035ad5e3aa72d67ff.ctex::
+slime_green.png::CompressedTexture2D::5237017572441659552::1757958019::1758569229::1::::<><><>0<>0<>4c1bc72e995926922fb8a5c862a96e0e<>res://.godot/imported/slime_green.png-fb7107eff8e2ed9c00a043e7e13b26fb.ctex::
+slime_purple.png::CompressedTexture2D::8012523259484518006::1757958019::1758569229::1::::<><><>0<>0<>1d9aec870a71942d5b035130db6435e8<>res://.godot/imported/slime_purple.png-376038660e9173786c4e7063828bb1b1.ctex::
+world_tileset.png::CompressedTexture2D::4852513108797828742::1757958019::1758569229::1::::<><><>0<>0<>a9d12a26145a0485e4f301789db2ffc5<>res://.godot/imported/world_tileset.png-69b6f3bb6f9e2e7040ba00c1da8dc33b.ctex::
+::res://dodgethecreeps/::1758568834
+::res://dodge_the_creeps_2d_assets/::1758568834
+README.md::TextFile::-1::1756926498::0::1::::<><><>0<>0<><>::
+::res://dodge_the_creeps_2d_assets/art/::1757359095
+enemyFlyingAlt_1.png::CompressedTexture2D::1494743564493742075::1756926498::1758569229::1::::<><><>0<>0<>b370992beebb4baf6ba6208dfbc6ac72<>res://.godot/imported/enemyFlyingAlt_1.png-1af413211a2529a30da7d9f2f4a6b808.ctex::
+enemyFlyingAlt_2.png::CompressedTexture2D::8878378065856328670::1756926498::1758569229::1::::<><><>0<>0<>b665a8f51580f1208252d517b4f7bcd4<>res://.godot/imported/enemyFlyingAlt_2.png-b2f2a49fa7280221d9f338a5c8b0f1c6.ctex::
+enemySwimming_1.png::CompressedTexture2D::4768108128461354763::1756926498::1758569229::1::::<><><>0<>0<>64f64733635d58cdebacbf287e49c065<>res://.godot/imported/enemySwimming_1.png-496f4d596b206580bb0cb43bea6a7d9e.ctex::
+enemySwimming_2.png::CompressedTexture2D::6166927201226172303::1756926498::1758569229::1::::<><><>0<>0<>4c88fe6c4ee31d72a0681bfe9f02426e<>res://.godot/imported/enemySwimming_2.png-84bdaa47439f2086cba1bbb144ad8ad3.ctex::
+enemyWalking_1.png::CompressedTexture2D::1997175349114353550::1756926498::1758569229::1::::<><><>0<>0<>35cc51d2bfd1ee8ad0ffec75aa8537bb<>res://.godot/imported/enemyWalking_1.png-902598647b52eae2465ee15bb048e05f.ctex::
+enemyWalking_2.png::CompressedTexture2D::8771888110231449992::1756926498::1758569229::1::::<><><>0<>0<>8c2bc49e74bfe27c791bc23164474ea4<>res://.godot/imported/enemyWalking_2.png-ca9a2538e8aef066c27be6b3cf4b7bf4.ctex::
+gameover.wav::AudioStreamWAV::5848801958180664969::1756926498::1758569229::1::::<><><>0<>0<>07bf0f95f641a81195e9c0218bbbc119<>res://.godot/imported/gameover.wav-206d189a962804931fabbddd48441b8d.sample::
+House In a Forest Loop.ogg::AudioStreamOggVorbis::3844128374850527789::1756926498::1758569229::1::::<><><>0<>0<>1026549aaadae15c8bded158b3a588ce<>res://.godot/imported/House In a Forest Loop.ogg-d4bf3307166d72e990a2912704e9010c.oggvorbisstr::
+playerGrey_up1.png::CompressedTexture2D::4245353160427469241::1756926498::1758569229::1::::<><><>0<>0<>d90d6019cb15c392676954b2fa3af431<>res://.godot/imported/playerGrey_up1.png-eef40fc788b0fd158b0b22d9bd57fbbd.ctex::
+playerGrey_up2.png::CompressedTexture2D::8889550734310983334::1756926498::1758569229::1::::<><><>0<>0<>0c100682915e624c75f704b7f50f0d2f<>res://.godot/imported/playerGrey_up2.png-d2d56f2f90a8a67f077a1df9ca87efe5.ctex::
+playerGrey_walk1.png::CompressedTexture2D::4771431819015801785::1756926498::1758569229::1::::<><><>0<>0<>d25c592b2fbe0176010cfc1475b1a891<>res://.godot/imported/playerGrey_walk1.png-794ce7dd9f8f9d32d2ddb9dd5b5c6911.ctex::
+playerGrey_walk2.png::CompressedTexture2D::1662589877030723610::1756926498::1758569229::1::::<><><>0<>0<>20440b92fdfff12efa49d6fae98aa3b0<>res://.godot/imported/playerGrey_walk2.png-9e652863850c272ea5fd5b9c411b2b18.ctex::
+::res://dodge_the_creeps_2d_assets/fonts/::1757461333
+FONTLOG.txt::TextFile::-1::1756926498::0::1::::<><><>0<>0<><>::
+LICENSE.txt::TextFile::-1::1756926498::0::1::::<><><>0<>0<><>::
+winning-82808.mp3::AudioStreamMP3::2140783859840544079::1757461327::1758569229::1::::<><><>0<>0<>e575c0a02b37000109190d18cc54490d<>res://.godot/imported/winning-82808.mp3-e96cbebda1d2cb10d3c140e42ddcc0f7.mp3str::
+Xolonium-Regular.ttf::FontFile::6641795953204388472::1756926498::1758569229::1::::<><><>0<>0<>6eaa746cb3768a3a6b3975d95fc6c411<>res://.godot/imported/Xolonium-Regular.ttf-037c802a1de93f298e468e8029b92fb2.fontdata::
+::res://Hana Caraka - Base Character [sample]/::1758568826
+color palette.png::CompressedTexture2D::658489742364886507::1757461671::1758569229::1::::<><><>0<>0<>65c8636e0c8f8d1ca93a0cdb6a392c36<>res://.godot/imported/color palette.png-1bb4e69b7f3360574ae6a3d092a41ad5.ctex::
+death.png::CompressedTexture2D::7949842338990001169::1757461671::1758569229::1::::<><><>0<>0<>0b47ee5d1b802d724074a00bd272fd06<>res://.godot/imported/death.png-0169b791383e464bd8128bab3fe93a8c.ctex::
+hurt.png::CompressedTexture2D::6396477462925373809::1757461671::1758569229::1::::<><><>0<>0<>7bc24dc0738e887702be0f69313a601f<>res://.godot/imported/hurt.png-183c66cf17f0a18d59a6b526f119fd56.ctex::
+idle.png::CompressedTexture2D::387943424107834626::1757461671::1758569229::1::::<><><>0<>0<>6b3ce711e9b8913d9598c1107f3f3e7a<>res://.godot/imported/idle.png-f3f115c3fb06bccfffd7c13c7d509e99.ctex::
+jump.png::CompressedTexture2D::6819180445630493879::1757461671::1758569229::1::::<><><>0<>0<>c9fe57c5b3f929142be81f9d7b194ad8<>res://.godot/imported/jump.png-c6f45bf1ff38f513bd27f2caebc493bc.ctex::
+Read Me.txt::TextFile::-1::1757461671::0::1::::<><><>0<>0<><>::
+run.png::CompressedTexture2D::1406072512141389993::1757461671::1758569229::1::::<><><>0<>0<>d388343216245aa4bc80268c0f5e6524<>res://.godot/imported/run.png-8e9ab1bb6fd97952c60efbaff6d916c2.ctex::
+walk.png::CompressedTexture2D::3251988191505153013::1757461671::1758569229::1::::<><><>0<>0<>82dd68d312533ab86a67cef42db6230d<>res://.godot/imported/walk.png-422402749003d2404538c05f6513db37.ctex::
