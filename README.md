@@ -26,5 +26,6 @@
 - Fixed coin pickup (2hr)
 - Added new sounds from BDCraft: https://bdcraft.net/downloads/soundspack-minecraft/ (10 min)
 - Implemented global audio manager (1hr)
+- Fixed music loop (10 min)
 - Added lighting to creeps (10 min)
 - Adjustments made to game scaling (1 hr)
