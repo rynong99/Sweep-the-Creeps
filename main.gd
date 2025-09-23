@@ -12,7 +12,6 @@ var screen_size = get_viewport_rect().size
 
 func _ready():
 	$Player.hide()
-
 func game_over(win):
 	if $Player.poweredUp == true:
 		powerDown()
@@ -30,22 +29,17 @@ func game_over(win):
 func new_game():
 	score = 60
 	$Player.start($StartPosition.position)
-	if $Player.speed > 800:
+	if $Player.speed < 600:
 		$Player.speed = 400+(100*(level-1))
 	$StartTimer.start()
 	$CoinTimer.start()
 	$HUD.update_score(score)
+	$Player/PointLight2D.scale = Vector2(1,1)
+	$Player/CollisionShape2D.scale = Vector2(1,1)
 	if level == 1:
-		$Player/PointLight2D.scale = Vector2(level,level)
-		$Player/CollisionShape2D.scale = Vector2(level,level)
 		$HUD.show_message("Start Sweeping")
 	else:
 		$HUD.show_message("Level "+str(level))
-		if $Player/PointLight2D.scale < Vector2(4,4):
-			$Player/PointLight2D.scale = Vector2(level/2,level/2)
-		if $Player/CollisionShape2D.scale < Vector2(5,5):
-			$Player/CollisionShape2D.scale = Vector2(level/2,level/2)
-		print($Player/CollisionShape2D.scale)
 	get_tree().call_group("mobs", "queue_free")
 	get_tree().call_group("coin", "queue_free")
 	$Music.play()
@@ -78,7 +72,6 @@ func _on_start_timer_timeout():
 func mobSpawn():
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
-
 	# Choose a random location on Path2D.
 	var mob_spawn_location = $MobPath/MobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
@@ -118,6 +111,7 @@ func _on_coin_timer_timeout() -> void:
 func _on_power_up_timer_timeout() -> void:
 	print("Powering Down")
 	$PowerUpTimer.stop()
+	$CoinTimer.start()
 	$Player.speed /= 2
 	$Player/PointLight2D.scale /= 4
 	$Player/CollisionShape2D.scale /= 4
@@ -137,6 +131,7 @@ func _on_coin_collect() -> void:
 
 func _on_player_power_up() -> void:
 	print("Powering Up")
+	$CoinTimer.stop()
 	$PowerUpTimer.start()
 	$Player.poweredUp = true
 	$Player.speed *= 2
