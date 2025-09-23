@@ -20,3 +20,11 @@
 9/16/2025
 - The game now scales lighting and the speed the clock runs down based on the level. The lighting creates a soft gate in your ability to see the enemies, as the mob become easier to see the further you go. (2hrs)
 - Attempted to add a final loop in adding a powerup coin, but I couldn't get the signals to react correctly in time. (1hr)
+
+9/23/2025
+- Added coin assets from Brackey's platforming tutorial: https://brackeysgames.itch.io/brackeys-platformer-bundle (10 min)
+- Fixed coin pickup (2hr)
+- Added new sounds from BDCraft: https://bdcraft.net/downloads/soundspack-minecraft/ (10 min)
+- Implemented global audio manager (1hr)
+- Added lighting to creeps (10 min)
+- Adjustments made to game scaling (1 hr)
