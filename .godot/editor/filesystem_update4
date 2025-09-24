@@ -1,2 +1,6 @@
-res://Main.tscn
+res://mob.gd
 res://Mob.tscn
+res://Pixel Crawler - Free Pack/Environment/Tilesets/Floors.tres
+res://player.gd
+res://Main.tscn
+res://Player.tscn

@@ -45,7 +45,7 @@ func new_game():
 	$Music.play()
 	var spawnGoal = randi_range(0,100)
 	for i in range(100*level):
-		mobSpawn()
+		mob_spawn()
 		i+=1
 
 func _on_score_timer_timeout():
@@ -69,33 +69,40 @@ func _on_start_timer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
 	
-func mobSpawn():
+func old_mobSpawn():
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
 	# Choose a random location on Path2D.
-	var mob_spawn_location = $MobPath/MobSpawnLocation
-	mob_spawn_location.progress_ratio = randf()
+	#var mob_spawn_location = $MobPath/MobSpawnLocation
+	#mob_spawn_location.progress_ratio = randf()
 
 	# Set the mob's position to the random location.
-	mob.position = mob_spawn_location.position
+	#mob.position = mob_spawn_location.position
 
 	# Set the mob's direction perpendicular to the path direction.
-	var direction = mob_spawn_location.rotation + PI / 2
+	#var direction = mob_spawn_location.rotation + PI / 2
 
 	# Add some randomness to the direction.
-	direction += randf_range(-PI / 4, PI / 4)
-	mob.rotation = direction
+	#direction += randf_range(-PI / 4, PI / 4)
+	#mob.rotation = direction
 
 	# Choose the velocity for the mob.
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-	mob.linear_velocity = velocity.rotated(direction)
+	#var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	#mob.linear_velocity = velocity.rotated(direction)
 
 	# Spawn the mob by adding it to the Main scene.
 	
-	if (mob.position.x < 0) or (mob.position.x > (1920)):
-		mob.position.x = 960
-	elif (mob.position.y < 0) or (mob.position.y > (1080)):
-		mob.position.y = 540
+	#if (mob.position.x < 0) or (mob.position.x > (1920)):
+		#mob.position.x = 960
+	#elif (mob.position.y < 0) or (mob.position.y > (1080)):
+		#mob.position.y = 540
+	mob.position.x = 960
+	mob.position.y = 540
+	add_child(mob)
+func mob_spawn():
+	var mob = mob_scene.instantiate()
+	mob.position.x = 960
+	mob.position.y = 540
 	add_child(mob)
 func coinSpawn():
 	# Create a new instance of the Mob scene.
