@@ -1,3 +1,7 @@
+Playable at:
+
+https://rynong99.github.io/Sweep-the-Creeps/
+
 9/8/2025
 - Started project using the Dodge the Creeps tutorial on https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html
 
@@ -27,6 +31,7 @@
 - Fixed coin pickup (2hr)
 - Added new sounds from BDCraft: https://bdcraft.net/downloads/soundspack-minecraft/ (10 min)
 - Implemented global audio manager (1hr)
+- Finally implemented CI to the game repo. Turns out the invalid link was hiding in an old repo (1hr)
 - Fixed music loop (10 min)
 - Added lighting to creeps (10 min)
 - Adjustments made to game scaling (1 hr)
