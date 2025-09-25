@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://q03al72pqq1b"]
+[gd_scene load_steps=12 format=3 uid="uid://q03al72pqq1b"]
 
 [ext_resource type="Script" uid="uid://lkieagb0fp8i" path="res://mob.gd" id="1_ejbti"]
 [ext_resource type="Texture2D" uid="uid://vkchcubrqw40" path="res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="2_ch7wj"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ct4kni30r7gjv" path="res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png" id="5_utplx"]
 [ext_resource type="Texture2D" uid="uid://3ppgli0yjwck" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png" id="6_6v40e"]
 [ext_resource type="Texture2D" uid="uid://dw8fylhofqt4s" path="res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="7_xqp27"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ejbti"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8qumo"]
 animations = [{
@@ -62,10 +60,9 @@ fill = 1
 fill_from = Vector2(0.493119, 0.493119)
 
 [node name="Mob" type="RigidBody2D" groups=["mobs", "mobsCount"]]
-physics_material_override = SubResource("PhysicsMaterial_ejbti")
+collision_layer = 3
+mass = 0.5
 gravity_scale = 0.0
-continuous_cd = 1
-max_contacts_reported = 1
 script = ExtResource("1_ejbti")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

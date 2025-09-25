@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dy0px68yjpmsn"]
+[gd_scene load_steps=31 format=3 uid="uid://dy0px68yjpmsn"]
 
 [ext_resource type="Script" uid="uid://mad7yswyllqk" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bmlj1gtrptblt" path="res://Hana Caraka - Base Character [sample]/walk.png" id="2_kpjcp"]
@@ -190,12 +190,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kne1u"]
+radius = 64.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(80, 112)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
 motion_mode = 1
-safe_margin = 2.0
+platform_floor_layers = 0
+safe_margin = 10.0
 script = ExtResource("1_cxr5p")
 speed = 800
 
@@ -207,7 +212,7 @@ animation = &"down"
 frame_progress = 0.82988
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kpjcp")
+shape = SubResource("CircleShape2D_kne1u")
 
 [node name="CoinCollector" type="Area2D" parent="."]
 priority = 1
