@@ -2,8 +2,10 @@ extends Node2D
 
 @export var mob_scene: PackedScene
 @export var coin_scene: PackedScene
-var level = 1
 var score
+var level = 1
+var loaded_level
+var level_list = LevelManager.level_list
 var prevCount = 100
 var touch
 var mobCount
@@ -28,6 +30,13 @@ func game_over(win):
 
 func new_game():
 	score = 60
+	if loaded_level != null:
+		loaded_level.queue_free()
+	if level < 5:
+		load_level(level-1)
+	else:
+		var loading_level = randi() % 5
+		load_level(loading_level)
 	$Player.start($StartPosition.position)
 	if $Player.speed < 600:
 		$Player.speed = 400+(100*(level-1))
@@ -122,6 +131,7 @@ func _on_power_up_timer_timeout() -> void:
 	$Player.speed /= 2
 	$Player/PointLight2D.scale /= 4
 	$Player/CollisionShape2D.scale /= 4
+	$Player.set_collision_mask_value(3,false)
 
 func powerDown():
 	print("Powering Down")
@@ -130,8 +140,7 @@ func powerDown():
 	$Player.speed /= 2
 	$Player/PointLight2D.scale /= 4
 	$Player/CollisionShape2D.scale /= 4
-
-
+	$Player.set_collision_mask_value(3,true)
 func _on_coin_collect() -> void:
 	pass # Replace with function body.
 
@@ -141,7 +150,14 @@ func _on_player_power_up() -> void:
 	$CoinTimer.stop()
 	$PowerUpTimer.start()
 	$Player.poweredUp = true
+	$Player.set_collision_mask_value(3,false)
 	$Player.speed *= 2
 	$Player/PointLight2D.scale *= 4
 	$Player/CollisionShape2D.scale *= 4
 	pass # Replace with function body.
+	
+func load_level(new_level):
+	loaded_level = level_list[new_level].instantiate()
+	loaded_level.enabled = true
+	print(load_level)
+	add_child(loaded_level)

@@ -26,8 +26,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= speed		
 	else:
 		velocity.y = 0 '''
-	velocity = direction * 80
-	max_slides = 0
+	velocity = direction * 100 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
@@ -49,9 +48,11 @@ func _physics_process(delta: float) -> void:
 	if collision and collision.get_collider() is Mob:
 		var collider = collision.get_collider()
 		#$CollisionShape2D.disabled = true
-		print("Hit Mob")
+		#print("Hit Mob")
 		var push_dir = collision.get_normal()*-1
-		collider.apply_central_impulse(push_dir*200)
+		collider.apply_central_impulse(push_dir*(speed/10))
+	if collision and collision.get_collider() is Fence:
+		move_and_slide()
 func start(pos):
 	position = pos
 	show()

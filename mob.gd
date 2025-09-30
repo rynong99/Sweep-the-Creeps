@@ -5,8 +5,18 @@ func _ready():
 	$AnimatedSprite2D.animation = mob_types.pick_random()
 	$AnimatedSprite2D.play()
 func _physics_process(delta: float) -> void:
-	move_and_collide(linear_velocity*delta)
-	linear_damp = 2
+	var collision = move_and_collide(linear_velocity * delta)
+	if collision and collision.get_collider() is Mob:
+		var collider = collision.get_collider()
+		#$CollisionShape2D.disabled = true
+		#print("Hit Mob")
+		var push_dir = collision.get_normal()*-1
+		collider.apply_central_impulse(push_dir)
+	if collision and collision.get_collider() is Fence:
+		var collider = collision.get_collider()
+		var push_dir = collision.get_normal()*-1
+		apply_central_impulse(push_dir*100)
+	linear_damp = 2.5
 func _process(delta):
 	if (position.x < 0) or (position.x > (1920)):
 		print("Scored")

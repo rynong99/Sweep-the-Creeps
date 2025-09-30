@@ -1,24 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1758830605
+::res://::1759182141
 area_2d.gd::GDScript/GDScript::2586962176060711416::1758084872::0::1::::<>StaticBody2D<><>0<>0<><>::
 audio_manager.gd::GDScript/GDScript::8494463613704937847::1758141011::0::1::::<>Node<><>0<>0<><>::
 audio_manager.tscn::PackedScene/PackedScene::85490120452313767::1758147930::0::1::::<><><>0<>0<><>::uid://dta1tskqiw0oh::::res://audio_manager.gd<>uid://cej7tw6vugyet::::res://orb.ogg<>uid://rf6lb08ys0x0::::res://eat1.ogg
 coin.gd::GDScript/GDScript::8432078153265130968::1758147579::0::1::::Coin<>Area2D<><>0<>0<><>::
-coin.tscn::PackedScene/PackedScene::2529212031921531669::1758147930::0::1::::<><><>0<>0<><>::uid://dsetdidnvudwq::::res://coin.gd<>uid://c2bsq4ukr8u0y::::res://brackeys_platformer_assets/sprites/coin.png<>uid://cej7tw6vugyet::::res://orb.ogg
+coin.tscn::PackedScene::2529212031921531669::1759181919::0::1::::<><><>0<>0<><>::uid://dsetdidnvudwq::::res://coin.gd<>uid://c2bsq4ukr8u0y::::res://brackeys_platformer_assets/sprites/coin.png<>uid://cej7tw6vugyet::::res://orb.ogg
 coin_collector.gd::GDScript/GDScript::9206264284137245023::1758147928::0::1::::<>Area2D<><>0<>0<><>::
 eat1.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::1205434193801202427::1758140338::1758569229::1::::<><><>0<>0<>8e2018ce166c9f1b95d44b02fed91579<>res://.godot/imported/eat1.ogg-3976e28e5c6fdd2ffe47649453edc95f.oggvorbisstr::
 export_presets.cfg::TextFile/TextFile::-1::1758569351::0::1::::<><><>0<>0<><>::
-global.gd::GDScript/GDScript::6996537450252394988::1758734736::0::1::::<>Node<><>0<>0<><>::
 hud.gd::GDScript/GDScript::3993492457228108842::1758076372::0::1::::<>CanvasLayer<><>0<>0<><>::
 HUD.tscn::PackedScene/PackedScene::7562969901341229987::1758147930::0::1::::<><><>0<>0<><>::uid://bw5qiclnicr8u::::res://hud.gd<>uid://c1vln51glee7y::::res://dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf
 icon.svg::CompressedTexture2D/CompressedTexture2D::1563817687869739454::1756926463::1758569229::1::::<><><>0<>0<>79ac07f3683b60fc51eb171d1f195302<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.gd::GDScript/GDScript::8806081673025337057::1758745248::0::1::::<>Node2D<><>0<>0<><>::
-Main.tscn::PackedScene::6332868290274534841::1758830560::0::1::::<><><>0<>0<><>::uid://dxpy44vk3x3ld::::res://main.gd<>uid://q03al72pqq1b::::res://Mob.tscn<>uid://dy0px68yjpmsn::::res://Player.tscn<>uid://bcbf0ub5i73qf::::res://coin.tscn<>uid://bhoalk6r08df::::res://audio_manager.tscn<>uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png<>uid://df0tak08dsi8b::::res://HUD.tscn<>uid://bymy4ohnadimj::::res://Pixel Crawler - Free Pack/Environment/Tilesets/Floors.tres<>uid://bu1eh6aa4frk4::::res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg<>uid://3qpgg17f71t2::::res://success_bell-6776.mp3<>uid://cplg6cjjcdq6t::::res://dodge_the_creeps_2d_assets/art/gameover.wav
-mob.gd::GDScript::793213946024590590::1758830560::0::1::::Mob<>RigidBody2D<><>0<>0<><>::
-Mob.tscn::PackedScene::1176331646295516165::1758830560::0::1::::<><><>0<>0<><>::uid://lkieagb0fp8i::::res://mob.gd<>uid://vkchcubrqw40::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png<>uid://dyq0ubtshfiqg::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png<>uid://b86ybrfcd47wh::::res://dodge_the_creeps_2d_assets/art/enemySwimming_1.png<>uid://ct4kni30r7gjv::::res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png<>uid://3ppgli0yjwck::::res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png<>uid://dw8fylhofqt4s::::res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png
+levelmanager.gd::GDScript::6996537450252394988::1759181349::0::1::::<>Node<><>0<>0<><>::
+levels.tscn::PackedScene::5442605289321224001::1759181919::0::1::::<><><>0<>0<><>::uid://c6xf7j0a8q5xw::::res://levelmanager.gd
+main.gd::GDScript::8806081673025337057::1759181919::0::1::::<>Node2D<><>0<>0<><>::
+Main.tscn::PackedScene::6332868290274534841::1759181919::0::1::::<><><>0<>0<><>::uid://dxpy44vk3x3ld::::res://main.gd<>uid://q03al72pqq1b::::res://Mob.tscn<>uid://dy0px68yjpmsn::::res://Player.tscn<>uid://bcbf0ub5i73qf::::res://coin.tscn<>uid://bhoalk6r08df::::res://audio_manager.tscn<>uid://df0tak08dsi8b::::res://HUD.tscn<>uid://bymy4ohnadimj::::res://Pixel Crawler - Free Pack/Environment/Tilesets/Floors.tres<>uid://cjso6crrv1imj::::res://levels.tscn<>uid://bu1eh6aa4frk4::::res://dodge_the_creeps_2d_assets/art/House In a Forest Loop.ogg<>uid://3qpgg17f71t2::::res://success_bell-6776.mp3<>uid://cplg6cjjcdq6t::::res://dodge_the_creeps_2d_assets/art/gameover.wav
+mob.gd::GDScript::793213946024590590::1759180154::0::1::::Mob<>RigidBody2D<><>0<>0<><>::
+Mob.tscn::PackedScene::1176331646295516165::1759181919::0::1::::<><><>0<>0<><>::uid://lkieagb0fp8i::::res://mob.gd<>uid://vkchcubrqw40::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png<>uid://dyq0ubtshfiqg::::res://dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png<>uid://b86ybrfcd47wh::::res://dodge_the_creeps_2d_assets/art/enemySwimming_1.png<>uid://ct4kni30r7gjv::::res://dodge_the_creeps_2d_assets/art/enemySwimming_2.png<>uid://3ppgli0yjwck::::res://dodge_the_creeps_2d_assets/art/enemyWalking_1.png<>uid://dw8fylhofqt4s::::res://dodge_the_creeps_2d_assets/art/enemyWalking_2.png
 orb.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::5074154219961363915::1758140382::1758569229::1::::<><><>0<>0<>3d0e094faf95f1df44f4982270853f43<>res://.godot/imported/orb.ogg-ffdd7d958f6236ccc79ed1a7733b6059.oggvorbisstr::
-player.gd::GDScript/GDScript::842506709438624622::1758828763::0::1::::player<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::8896357250700365801::1758830560::0::1::::<><><>0<>0<><>::uid://mad7yswyllqk::::res://player.gd<>uid://bmlj1gtrptblt::::res://Hana Caraka - Base Character [sample]/walk.png<>uid://d4ft3e3hucw36::::res://coin_collector.gd
+player.gd::GDScript::842506709438624622::1759179979::0::1::::player<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::8896357250700365801::1759181919::0::1::::<><><>0<>0<><>::uid://mad7yswyllqk::::res://player.gd<>uid://bmlj1gtrptblt::::res://Hana Caraka - Base Character [sample]/walk.png<>uid://d4ft3e3hucw36::::res://coin_collector.gd
 README.md::TextFile/TextFile::-1::1758673783::0::1::::<><><>0<>0<><>::
 success_bell-6776.mp3::AudioStreamMP3/AudioStreamMP3::1999239492351708889::1757461383::1758569229::1::::<><><>0<>0<>704700bbe1c716896a63c66dfd5a43c3<>res://.godot/imported/success_bell-6776.mp3-f3bd23dcd5b5d960ffdfccc5247f42d5.mp3str::
 ::res://brackeys_platformer_assets/::1758734882
@@ -73,6 +74,13 @@ jump.png::CompressedTexture2D/CompressedTexture2D::6819180445630493879::17574616
 Read Me.txt::TextFile/TextFile::-1::1757461671::0::1::::<><><>0<>0<><>::
 run.png::CompressedTexture2D/CompressedTexture2D::1406072512141389993::1757461671::1758569229::1::::<><><>0<>0<>d388343216245aa4bc80268c0f5e6524<>res://.godot/imported/run.png-8e9ab1bb6fd97952c60efbaff6d916c2.ctex::
 walk.png::CompressedTexture2D/CompressedTexture2D::3251988191505153013::1757461671::1758569229::1::::<><><>0<>0<>82dd68d312533ab86a67cef42db6230d<>res://.godot/imported/walk.png-422402749003d2404538c05f6513db37.ctex::
+::res://Levels/::1759181919
+fence.gd::GDScript::163784741403600982::1759179901::0::1::::Fence<>TileMapLayer<><>0<>0<><>::
+Level1.tscn::PackedScene::1060220328548410367::1759181919::0::1::::<><><>0<>0<><>::uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png<>uid://cllrmo8g548q::::res://Levels/fence.gd
+Level2.tscn::PackedScene::2947293306395679690::1759181919::0::1::::<><><>0<>0<><>::uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png
+Level3.tscn::PackedScene::1438299445546791540::1759181919::0::1::::<><><>0<>0<><>::uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png<>uid://cllrmo8g548q::::res://Levels/fence.gd
+Level4.tscn::PackedScene::5617413405649463541::1759181919::0::1::::<><><>0<>0<><>::uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png<>uid://cllrmo8g548q::::res://Levels/fence.gd
+Level5.tscn::PackedScene::1301093167053534839::1759181919::0::1::::<><><>0<>0<><>::uid://io1cex7k5crn::::res://Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png<>uid://cllrmo8g548q::::res://Levels/fence.gd
 ::res://Pixel Crawler - Free Pack/::1758736070
 Terms.txt::TextFile/TextFile::-1::1758734829::0::1::::<><><>0<>0<><>::
 ::res://Pixel Crawler - Free Pack/Entities/::1758734964
@@ -323,9 +331,9 @@ Level_2-Sheet.png::CompressedTexture2D/CompressedTexture2D::2265257106916868350:
 Level_3-Sheet.png::CompressedTexture2D/CompressedTexture2D::9114009624918605833::1758734829::1758734840::1::::<><><>0<>0<>9fca080a50a353fd680b99f7b490b6d2<>res://.godot/imported/Level_3-Sheet.png-d9246678c6b0edd416f725d1f4c7efd0.ctex::
 ::res://Pixel Crawler - Free Pack/Environment/Structures/Stations/Workbench/::1758734949
 Workbench.png::CompressedTexture2D/CompressedTexture2D::9178574835113954777::1758734829::1758734840::1::::<><><>0<>0<>77049ed3c2f280f9b4f9cf8cd2591b8b<>res://.godot/imported/Workbench.png-7cefe47d8497b25feb434a55ffcbce21.ctex::
-::res://Pixel Crawler - Free Pack/Environment/Tilesets/::1758830238
+::res://Pixel Crawler - Free Pack/Environment/Tilesets/::1759178332
 Dungeon_Tiles.png::CompressedTexture2D/CompressedTexture2D::8105133693144029084::1758734829::1758734840::1::::<><><>0<>0<>14eba8a377f5d2a12a8b66d2c0678b9e<>res://.godot/imported/Dungeon_Tiles.png-281a3d294941dca27feb36175c130d27.ctex::
-Floors.tres::TileSet::4097235206635553721::1758830238::0::1::::<><><>0<>0<><>::uid://y3ydto3nka6y::::res://Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.png
+Floors.tres::TileSet::4097235206635553721::1759178332::0::1::::<><><>0<>0<><>::uid://y3ydto3nka6y::::res://Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.png
 Floors_Tiles.png::CompressedTexture2D/CompressedTexture2D::1743798410495433686::1758734829::1758735183::1::::<><><>0<>0<>f58bf24381308e7fe4d5f4217235e38b<>res://.godot/imported/Floors_Tiles.png-e59c53ab8c05477956fb73fc95206b53.ctex::
 Wall_Tiles.png::CompressedTexture2D/CompressedTexture2D::5713283534102514270::1758734829::1758734840::1::::<><><>0<>0<>8820482a2334203b9a3340609ff1f3ae<>res://.godot/imported/Wall_Tiles.png-5a9bcebe21146a992dce028512d37680.ctex::
 Wall_Variations.png::CompressedTexture2D/CompressedTexture2D::4443570051671073354::1758734829::1758734840::1::::<><><>0<>0<>9ef76ba7a8ed56af1a5e2e86056e8e5c<>res://.godot/imported/Wall_Variations.png-d7c3e1e21e7e17233a51aa7bcb30222f.ctex::
