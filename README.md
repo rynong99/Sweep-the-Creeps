@@ -35,3 +35,9 @@ https://rynong99.github.io/Sweep-the-Creeps/
 - Fixed music loop (10 min)
 - Added lighting to creeps (10 min)
 - Adjustments made to game scaling (1 hr)
+
+9/30/2025
+- Updated game physics to accommodate tilemaps (2hr)
+- Added maps (1hr)
+- Added level loading (2hr)
+- Fixes related to collision boxes in the new maps (1 hr)
